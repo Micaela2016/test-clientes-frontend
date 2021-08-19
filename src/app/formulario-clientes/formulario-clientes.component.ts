@@ -27,9 +27,9 @@ export class FormularioClientesComponent implements OnInit {
   
 
   
-  async guardarCliente(){
+  guardarCliente(){
     const cliente: Cliente = this.formCliente.value;
-    await this.clienteService.postClientes(cliente).subscribe( res => {
+      this.clienteService.postClientes(cliente).subscribe( res => {
       this.router.navigate(['/listado']);
     })
   }

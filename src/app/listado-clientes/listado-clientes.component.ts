@@ -16,8 +16,8 @@ export class ListadoClientesComponent implements OnInit {
     this.obtenerCliente();
   }
 
-  async obtenerCliente(){
-    await this.clientesService.getClientes().subscribe(res => {
+obtenerCliente(){
+    this.clientesService.getClientes().subscribe(res => {
       this.clientes = res;
     });
   }
