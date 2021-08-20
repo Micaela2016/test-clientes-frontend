@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from './../modelos/cliente.model';
+import { Cliente } from '../models/cliente.model';
 import { ClientesService } from './../services/clientes.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { ClientesService } from './../services/clientes.service';
 })
 export class ListadoClientesComponent implements OnInit {
 
-  clientes: Cliente[]
+  public clientes: any [];
   constructor(private clientesService: ClientesService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.obtenerCliente();
   }
 

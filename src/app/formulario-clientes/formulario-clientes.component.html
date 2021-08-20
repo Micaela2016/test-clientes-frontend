@@ -1,20 +1,32 @@
-<div class="container">
-    <div class="abs-center">
-        <h1>Agregar cliente</h1>
-        <form class="border p-4 form" [formGroup]="formCliente" (ngSubmit)="guardarCliente()">
-            <div class="mb-3">
-                <label for="name" class="form-label">Nombre </label>
-                <input formControlName="Nombre" type="text" class="form-control" placeholder="Escribe tu nombre aqui.">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card .bg-secondary">
+                <div class="card-body">
+                    <h1 class="title text-primary">Agregar cliente</h1>
+                    <form class="border p-4 form bg-light" [formGroup]="formCliente" (ngSubmit)="guardarCliente()">
+                        <div class="input-group input-group-lg mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-user-circle"></i></span>
+                            <input formControlName="Nombre" type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="input-group input-group-lg mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-user-circle"></i></span>
+                            <input formControlName="Apellido" type="text" class="form-control" placeholder="Apellido">
+                        </div>
+                        <div class="input-group input-group-lg mb-3">
+                            <span class="input-group-text icon-widht">
+                                <i class="fas fa-map-marker-alt"></i></span>
+                            <input formControlName="Direccion" type="text" class="form-control" placeholder="Direccion">
+                        </div>
+                        <div class="d-grip gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="lastName" class="form-label">Apellido</label>
-                <input formControlName="Apellido" type="text" class="form-control" placeholder="Escribe tu apellido aqui.">
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Dirección</label>
-                <input formControlName="Direccion" type="text" class="form-control" placeholder="Escribe tu dirección aqui.">
-            </div>
-            <button  type="submit" class="btn btn-primary">Guardar</button>
-        </form> 
+        </div>
     </div>
 </div>
+

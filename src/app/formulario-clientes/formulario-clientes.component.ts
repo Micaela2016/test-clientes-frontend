@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClientesService } from '../services/clientes.service';
-import { Cliente } from './../modelos/cliente.model'
+import { Cliente } from '../models/cliente.model'
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
@@ -15,9 +15,9 @@ export class FormularioClientesComponent implements OnInit {
   constructor(private clienteService: ClientesService,private formBuilder: FormBuilder,  private router: Router) {
     this.formCliente = this.formBuilder.group({
       Id: 0,
-      Nombre: ['',[Validators.required]],
-      Apellido:['',[Validators.required]],
-      Direccion: ['',[Validators.required]]
+      Nombre: ['',[Validators.required, Validators.minLength(2)]],
+      Apellido:['',[Validators.required, Validators.minLength(2)]],
+      Direccion: ['',[Validators.required, Validators.minLength(2)]]
     });
     
   }
@@ -29,6 +29,13 @@ export class FormularioClientesComponent implements OnInit {
   
   guardarCliente(){
     const cliente: Cliente = this.formCliente.value;
+    /*const cliente: any = {
+      Nombre: this.formCliente.get('Nombre')?.value,
+      Apellido: this.formCliente.get('Apellido')?.value,
+      Direccion: this.formCliente.get('Direccion')?.value,
+    }*/
+    console.log(this.formCliente);
+    console.log(cliente);
       this.clienteService.postClientes(cliente).subscribe( res => {
       this.router.navigate(['/listado']);
     })

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable } from 'rxjs';
+import { Cliente } from '../models/cliente.model';
 
 const httpOption = {
     headers: new HttpHeaders({
@@ -13,19 +13,19 @@ const httpOption = {
 })
 export class ClientesService {
 
-    readonly url = "http://localhost:5000/clientes";
+    readonly url = "http://localhost:5000/Clientes/";
 
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient) {}
+
+    getClientes(){
+        return this.http.get<Cliente[]>(this.url,httpOption);
+
     }
 
-    getClientes(): Observable<any[]>{
-        return this.http.get<any>(this.url);
-    }
 
-
-    postClientes(value: any){
-        return this.http.post(this.url, value);
+    postClientes(cliente:Cliente){
+        return  this.http.post(`${this.url}`,cliente,httpOption);
     }
 
 }
