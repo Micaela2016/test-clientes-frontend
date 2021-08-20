@@ -4,15 +4,15 @@
         <form class="border p-4 form" [formGroup]="formCliente" (ngSubmit)="guardarCliente()">
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre </label>
-                <input type="text" class="form-control" placeholder="Escribe tu nombre aqui.">
+                <input formControlName="Nombre" type="text" class="form-control" placeholder="Escribe tu nombre aqui.">
             </div>
             <div class="mb-3">
                 <label for="lastName" class="form-label">Apellido</label>
-                <input type="text" class="form-control" placeholder="Escribe tu apellido aqui.">
+                <input formControlName="Apellido" type="text" class="form-control" placeholder="Escribe tu apellido aqui.">
             </div>
             <div class="mb-3">
                 <label for="address" class="form-label">Dirección</label>
-                <input type="text" class="form-control" placeholder="Escribe tu dirección aqui.">
+                <input formControlName="Direccion" type="text" class="form-control" placeholder="Escribe tu dirección aqui.">
             </div>
             <button  type="submit" class="btn btn-primary">Guardar</button>
         </form> 
