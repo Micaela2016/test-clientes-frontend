@@ -13,7 +13,7 @@ const httpOption = {
 })
 export class ClientesService {
 
-    readonly url = "http://localhost:5000/Clientes/";
+    readonly url = "https://localhost:5001/api/Cliente";
 
 
     constructor(private http: HttpClient) {}

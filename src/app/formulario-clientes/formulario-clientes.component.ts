@@ -34,8 +34,7 @@ export class FormularioClientesComponent implements OnInit {
       Apellido: this.formCliente.get('Apellido')?.value,
       Direccion: this.formCliente.get('Direccion')?.value,
     }*/
-    console.log(this.formCliente);
-    console.log(cliente);
+
       this.clienteService.postClientes(cliente).subscribe( res => {
       this.router.navigate(['/listado']);
     })
